@@ -13,6 +13,9 @@ def create_operations():
     return "operations table appeared"
 
 def insert_operation(id: int, amount: int, type: str, date: str):
+    if "payment" in type and amount > 0:
+        amount *= -1
+
     result = execute_cuery(INSERT_OPERATION, (id, amount, type, date))
     return result[0][0] if result else None
 
@@ -34,5 +37,9 @@ def get_users_operations(users_id):
     operations = []
     result = execute_cuery(GET_USER_OPERATIONS, users_id)
     for row in result:
-        operations.append(Operation(id=row[0], amount=row[1], type=row[2], date_of_operation=row[3]))
-    return operations
+        operations.append(Operation(id=row[0], type=row[1], amount=row[2], date_of_operation=row[3]))
+    return operations if operations else "there's no operations on this user"
+
+def get_income(operations):
+    result = sum(operations[i].amount for i in range(len(operations)))
+    return result
