@@ -1,0 +1,41 @@
+div{
+    background: darkslategrey;
+    color: #88e488;
+}
+
+h1{
+    background: darkslategrey;
+    color: #88e488;
+    text-align: center;
+}
+
+
+header{
+    background: darkslategrey;
+}
+h2{
+    background: darkslategrey;
+    text-align: center;
+
+}
+.operations .operation{
+    font-size: large;
+    background: #dda044;
+    color: #fafafa;
+    float: initial;
+    text-align: center;
+}
+
+#sort2{
+    width: 200px;
+    margin: 10px 5%;
+}
+
+#sort1{
+    width: 200px;
+    margin: 10px 5%;
+}
+
+body{
+    background: #707070;
+}

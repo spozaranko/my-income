@@ -1,0 +1,44 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>userpage</title>
+    <link rel="stylesheet" href="{% static 'userpage/css/style.css' %}">
+</head>
+<body>
+    <header>
+      <h1 class="pagedesc">
+        Here you can manage your payments, get your monthly income and so on...
+      </h1>
+    </header>
+    <main>
+        <div class="operations">
+            <h2>here's your operation list:</h2>
+            <a href="{% url 'insertop'%}"> INSERT OPERATION</a>
+            <aside class="analyse">
+                <div id="sort1" class="sort">
+                    сортировать после:
+                    <input type="date">
+                </div>
+
+                <div id="sort2" class="sort">
+                    сортировать по:
+                    <button type="submit"> возрастанию </button>
+                    <button type="submit"> убыванию </button>
+                </div>
+            </aside>
+            {% for el in operations %}
+                <div class="operations operation">
+                    <h4>{{el}}</h4>
+                </div>
+            {% endfor %}
+        </div>
+
+    </main>
+    <aside>
+
+    </aside>
+  <footer></footer>
+</body>
+</html>

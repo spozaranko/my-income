@@ -1,0 +1,11 @@
+article {
+    color: #2a2d9f;
+}
+h1{
+    color: #2a2d9f;
+}
+
+fieldset .submitbtn{
+    float: left;
+    color: khaki;
+}
